@@ -4,4 +4,4 @@ A solitaire terminal wordgame in Python inspired by Snatch-It, Bananagrams, and 
 
 The general gist of the game is arranging a growing set of letters into words of at least 5 letters. For more detail read the in-program helptext.
 
-Should run in any Python 3 text environment. You don't NEED to download it you can just copypaste it.
+Should run in any Python 3.10+ text environment. You don't NEED to download it you can just copypaste it.
