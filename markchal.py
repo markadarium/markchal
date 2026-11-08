@@ -7,10 +7,12 @@ import time
 from collections import Counter
 
 # You can change this as you see fit.
+# Pre-Sep 4 2026 distr. was "AAAAAAAAAAAAJKQQXZBBBBBBCCCCDDDDDDDDEEEEEEEEEEEEEEEE"
+#    "FFFGGGGHHHHIIIIIIIIIIIILLLLLLMMMNNNNNNNNOOOOOOOOOOOPPPPRRRRRRRRRSSSSSSTTTTTTTTTUUUUUUVVVWWWYYYY"
 # For parity with a physical Bananagrams tileset use "AAAAAAAAAAAAABBBCCCDDDDDDEEEEEEEEEEEEEEEEEEFFFGGGGHH"
 #    "HIIIIIIIIIIIIJJKKLLLLLMMMNNNNNNNNOOOOOOOOOOOPPPQQRRRRRRRRRSSSSSSTTTTTTTTTUUUUUUVVVWWWXXYYYZZ"
 TILE_DISTRIBUTION = (
-    "AAAAAAAAAAAAJKKQXXZBBBBBCCCCCDDDDDDDDEEEEEEEEEEEEEEEE"
+    "AAAAAAAAAAAAJKKQQXZBBBBBCCCCCDDDDDDDDEEEEEEEEEEEEEEEE"
     "FFFGGGHHHHIIIIIIIIIIIILLLLLLMMMMNNNNNNNNOOOOOOOOOOOPPPPRRRRRRRRRSSSSSSTTTTTTTTTUUUUUUVVVWWWYYYY"
 )
 
@@ -102,8 +104,8 @@ def print_help():
     print("Make sets of 5+ letter words using all tiles in your hand.")
     print("Let's say you start with the tiles ABCEEEHIIIJOPRRSTUVY,")
     print("You open notepad (you should keep notepad open when you play this)")
-    print("and figure out a set of four 5-letter words that's an anagram of ABCEEEHIIIJOPRRSTUVY")
-    print("You find a solution, and type 'hijab privy eerie scout'")
+    print("and figure out a set of four 5-letter words that's an anagram of AABCEEEEGHIIIJLOPRRSTUVYZ")
+    print("You find a solution, and type 'hijab glaze privy eerie scout'")
     print("(You'll probly need to reset your initial draw (type 'rst') a few times, no shame.)")
     print("and then you'll get a new letter to add to your set of words. Let's say L")
     print("Now make a set of words that's an anagram of your previous response plus L")
@@ -112,7 +114,7 @@ def print_help():
     print("Next you get an A. Steal the C from LOCUST, leaving LOTUS")
     print("Add the A and the C to PRIVY, and type 'lotus privacy'.")
     print("If it doesn't work, try typing 'locust privy>lotus privacy'")
-    print("At 25 tiles you have the chance to distribute your tiles into 5 5-letter words.")
+    print("At 30 tiles you have the chance to distribute your tiles into 5 5-letter words.")
     print("Over time you will have more and more words, and adding letters will get easier.")
     print("Can you get to 80 tiles? How fast?")
     print("btw there is no dictionary, judging what's a word is on you.")
@@ -129,8 +131,8 @@ def _run_game(seed=None):
     bag = build_tile_bag(seed)
     hand = []
     tiles_drawn = 0
-# You can edit initial_draw to = 25 to make the game easier
-    initial_draw = 20
+# You can edit initial_draw to = 20 to make the game easier
+    initial_draw = 25
     for _ in range(initial_draw):
         hand.append(bag.pop())
     tiles_drawn = initial_draw
